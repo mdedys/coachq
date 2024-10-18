@@ -16,6 +16,7 @@
     "test": "node --loader=tsx --test src/**/*.test.*"
   },
   "dependencies": {
+    "@mdedys/ui-kit": "0.1.0-rc2",
     "react": "~18.2.0",
     "react-dom": "~18.2.0"
   },
@@ -38,5 +39,5 @@
     "typescript": "~5.2.2",
     "vite": "~5.0.8"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.5.0"
 }
