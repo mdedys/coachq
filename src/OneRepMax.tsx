@@ -1,4 +1,5 @@
 import { Button } from "@mdedys/ui-kit/button";
+import { Divider } from "@mdedys/ui-kit/divider";
 import { Icon } from "@mdedys/ui-kit/icons";
 import { border, shadows, spacing } from "@mdedys/ui-kit/styles";
 import { Textfield } from "@mdedys/ui-kit/textfield";
@@ -28,7 +29,7 @@ const PercentageContainer = styled.div`
 const Percentage = styled.div`
   flex: 0 1 20%;
 
-  border: 1px solid ${cssvar(vars.colors.border.primary)};
+  border: 1px solid ${cssvar(vars.colors.border.brandsolid)};
   border-right: none;
   text-align: center;
 
@@ -37,13 +38,13 @@ const Percentage = styled.div`
   }
 
   &:nth-child(5n + 5) {
-    border-right: 1px solid ${cssvar(vars.colors.border.primary)};
+    border-right: 1px solid ${cssvar(vars.colors.border.brandsolid)};
   }
 `;
 
 const Label = styled.div`
   background-color: ${cssvar(vars.colors.background.brand.main)};
-  border-bottom: 1px solid ${cssvar(vars.colors.border.primary)};
+  border-bottom: 1px solid ${cssvar(vars.colors.border.brandsolid)};
   color: ${cssvar(vars.colors.text.primary.main)};
 
   padding: ${spacing.xs.rem};
@@ -153,6 +154,8 @@ export default function OneRepMax() {
 
       {oneRepMax > 0 && (
         <>
+          <Divider />
+
           <PercentageContainer>
             {percentages.map(p => (
               <Percentage>

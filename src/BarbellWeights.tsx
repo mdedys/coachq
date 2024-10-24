@@ -108,19 +108,23 @@ export default function BarbellWeights() {
         <Button type="submit">Get Weights</Button>
       </Form>
 
-      <Divider />
+      {plates.length > 0 && (
+        <>
+          <Divider />
 
-      <Typography variant="text" size="lg" weight="700">
-        Barbell Setup
-      </Typography>
+          <Typography variant="text" size="lg" weight="700">
+            Barbell Setup
+          </Typography>
 
-      {plates
-        .filter(f => f.count > 0)
-        .map(p => (
-          <div>
-            {p.weight} lbs x {p.count}
-          </div>
-        ))}
+          {plates
+            .filter(f => f.count > 0)
+            .map(p => (
+              <div>
+                {p.weight} lbs x {p.count}
+              </div>
+            ))}
+        </>
+      )}
     </Container>
   );
 }

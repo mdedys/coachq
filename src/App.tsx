@@ -43,7 +43,23 @@ function App() {
 
   return (
     <>
-      <ThemeProvider theme="light" />
+      <ThemeProvider
+        theme="light"
+        brand={{
+          25: "#FFBCBC",
+          50: "#FFA6A6",
+          100: "#FF7A7A",
+          200: "#FF6363",
+          300: "#FF4D4D",
+          400: "#FF2121",
+          500: "#FF0B0B",
+          600: "#F30000",
+          700: "#C60000",
+          800: "#AA0000",
+          900: "#8E0000",
+          950: "#720000",
+        }}
+      />
       <Grid>
         <Header />
         <TabsContainer>

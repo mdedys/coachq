@@ -13,7 +13,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "fmt": "prettier ./src --write src",
-    "test": "node --loader=tsx --test src/**/*.test.*"
+    "test": "node --loader=tsx --test src/**/*.test.*",
+    "generate-pwa-assets": "pwa-assets-generator --preset minimal-2023 public/logo.svg"
   },
   "dependencies": {
     "@mdedys/ui-kit": "0.1.0-rc3",
@@ -27,6 +28,7 @@
     "@types/react-dom": "~18.2.17",
     "@typescript-eslint/eslint-plugin": "~6.14.0",
     "@typescript-eslint/parser": "~6.14.0",
+    "@vite-pwa/assets-generator": "~0.2.6",
     "@vitejs/plugin-react": "~4.2.1",
     "eslint": "~8.55.0",
     "eslint-config-prettier": "~9.1.0",
@@ -38,7 +40,8 @@
     "tsx": "~4.14.0",
     "type-fest": "~4.9.0",
     "typescript": "~5.2.2",
-    "vite": "~5.0.8"
+    "vite": "~5.0.8",
+    "vite-plugin-pwa": "~0.20.5"
   },
   "packageManager": "yarn@4.5.0"
 }

@@ -4,6 +4,10 @@ import { styled } from "styled-components";
 import Logo from "./Logo";
 
 const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   grid-column: 1 / -1;
 
   padding: ${spacing.xl.rem} 0;
