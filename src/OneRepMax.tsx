@@ -109,13 +109,16 @@ function getWeightPercentages(max: number) {
 }
 
 export default function OneRepMax() {
-  const [reps, setReps] = useState("0");
-  const [weight, setWeight] = useState("0");
+  const [reps, setReps] = useState("");
+  const [weight, setWeight] = useState("");
   const [oneRepMax, setOneRepMax] = useState(0);
 
   function onClickCalculate(evt: FormEvent) {
     evt.preventDefault();
-    const oneRep = calculateOneRepMax(parseInt(reps), parseInt(weight));
+    const oneRep = calculateOneRepMax(
+      parseInt(reps) || 0,
+      parseInt(weight) || 0,
+    );
     const rounded = roundWeight(oneRep);
     setOneRepMax(rounded);
     return false;
