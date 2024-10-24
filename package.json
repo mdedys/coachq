@@ -16,9 +16,10 @@
     "test": "node --loader=tsx --test src/**/*.test.*"
   },
   "dependencies": {
-    "@mdedys/ui-kit": "0.1.0-rc2",
+    "@mdedys/ui-kit": "0.1.0-rc3",
     "react": "~18.2.0",
-    "react-dom": "~18.2.0"
+    "react-dom": "~18.2.0",
+    "styled-components": "~6.1.13"
   },
   "devDependencies": {
     "@types/node": "~20.14.2",

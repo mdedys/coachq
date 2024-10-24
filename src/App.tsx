@@ -1,31 +1,61 @@
+import { Grid } from "@mdedys/ui-kit/layout";
+import { spacing } from "@mdedys/ui-kit/styles";
+import { cssvar, ThemeProvider, vars } from "@mdedys/ui-kit/theme";
+import { Typography } from "@mdedys/ui-kit/typography";
 import { useState } from "react";
+import { styled } from "styled-components";
 
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+import BarbellWeights from "./BarbellWeights";
+import Header from "./Header";
+import OneRepMax from "./OneRepMax";
+
+const TabsContainer = styled.div`
+  display: flex;
+  grid-column: 1 / -1;
+
+  border-bottom: 1px solid ${cssvar(vars.colors.border.secondary)};
+`;
+
+const Tab = styled.div<{ $active?: boolean }>`
+  border-bottom: ${props =>
+    props.$active
+      ? `2px solid ${cssvar(vars.colors.foreground.brand.alt)}`
+      : "none"};
+  color: ${props =>
+    props.$active
+      ? cssvar(vars.colors.text.brand.secondary)
+      : cssvar(vars.colors.text.quaternary.main)};
+  cursor: pointer;
+  flex: 50%;
+  text-align: center;
+`;
+
+const TabText = styled(Typography).attrs({
+  variant: "text",
+  size: "sm",
+  weight: "600",
+})`
+  margin-bottom: ${spacing.lg.rem};
+`;
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [tab, setTab] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank"></a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ThemeProvider theme="light" />
+      <Grid>
+        <Header />
+        <TabsContainer>
+          <Tab $active={tab === 0} onClick={() => setTab(0)}>
+            <TabText>1 Rep Max</TabText>
+          </Tab>
+          <Tab $active={tab === 1} onClick={() => setTab(1)}>
+            <TabText>Barbell Weights</TabText>
+          </Tab>
+        </TabsContainer>
+        {tab === 0 ? <OneRepMax /> : <BarbellWeights />}
+      </Grid>
     </>
   );
 }
